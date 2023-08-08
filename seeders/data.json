@@ -1,0 +1,206 @@
+{
+  "categories": [
+    { "name": "Engine Parts", "slug": "engine-parts", "imageURL": "engine-parts.jpg" },
+    { "name": "Brake System", "slug": "brake-system", "imageURL": "brake-system.jpg" },
+    { "name": "Suspension Components", "slug": "suspension-components", "imageURL": "suspension-components.jpg" },
+    { "name": "Electrical System", "slug": "electrical-system", "imageURL": "electrical-system.jpg" },
+    { "name": "Transmission Parts", "slug": "transmission-parts", "imageURL": "transmission-parts.jpg" },
+    { "name": "Exhaust System", "slug": "exhaust-system", "imageURL": "exhaust-system.jpg" },
+    { "name": "Fuel System", "slug": "fuel-system", "imageURL": "fuel-system.jpg" },
+    { "name": "Interior Accessories", "slug": "interior-accessories", "imageURL": "interior-accessories.jpg" },
+    { "name": "Exterior Accessories", "slug": "exterior-accessories", "imageURL": "exterior-accessories.jpg" },
+    { "name": "Tires and Wheels", "slug": "tires-and-wheels", "imageURL": "tires-and-wheels.jpg" },
+    { "name": "Cooling System", "slug": "cooling-system", "imageURL": "cooling-system.jpg" },
+    { "name": "Ignition System", "slug": "ignition-system", "imageURL": "ignition-system.jpg" },
+    { "name": "Steering Components", "slug": "steering-components", "imageURL": "steering-components.jpg" },
+    { "name": "Air Conditioning System", "slug": "air-conditioning-system", "imageURL": "air-conditioning-system.jpg" },
+    { "name": "Filters", "slug": "filters", "imageURL": "filters.jpg" },
+    { "name": "Belts and Hoses", "slug": "belts-and-hoses", "imageURL": "belts-and-hoses.jpg" },
+    { "name": "Fluids and Lubricants", "slug": "fluids-and-lubricants", "imageURL": "fluids-and-lubricants.jpg" },
+    { "name": "Performance Upgrades", "slug": "performance-upgrades", "imageURL": "performance-upgrades.jpg" },
+    { "name": "Body Parts", "slug": "body-parts", "imageURL": "body-parts.jpg" },
+    { "name": "Tools and Equipment", "slug": "tools-and-equipment", "imageURL": "tools-and-equipment.jpg" }
+  ],
+  "products": [
+    {
+      "name": "Spark Plug",
+      "category": "Engine Parts",
+      "manufacturer": "AutoTech",
+      "description": "High-quality spark plug for efficient combustion.",
+      "price": 9.99,
+      "stock": 100,
+      "imageURL": "spark-plug.jpg"
+    },
+    {
+      "name": "Brake Pad",
+      "category": "Brake System",
+      "manufacturer": "BrakeMaster",
+      "description": "Durable brake pad for safe and effective braking.",
+      "price": 29.99,
+      "stock": 50,
+      "imageURL": "brake-pad.jpg"
+    },
+    {
+      "name": "Oil Filter",
+      "category": "Engine Parts",
+      "manufacturer": "FilterPro",
+      "description": "Premium oil filter for maintaining engine health.",
+      "price": 7.99,
+      "stock": 150,
+      "imageURL": "oil-filter.jpg"
+    },
+    {
+      "name": "Radiator Hose",
+      "category": "Engine Parts",
+      "manufacturer": "CoolTech",
+      "description": "Durable radiator hose for efficient cooling.",
+      "price": 12.99,
+      "stock": 75,
+      "imageURL": "radiator-hose.jpg"
+    },
+    {
+      "name": "Shock Absorber",
+      "category": "Suspension",
+      "manufacturer": "SmoothRide",
+      "description": "Smooth and reliable shock absorber for a comfortable ride.",
+      "price": 34.99,
+      "stock": 40,
+      "imageURL": "shock-absorber.jpg"
+    },
+    {
+      "name": "Air Filter",
+      "category": "Engine Parts",
+      "manufacturer": "CleanAir",
+      "description": "High-performance air filter for improved engine efficiency.",
+      "price": 14.99,
+      "stock": 120,
+      "imageURL": "air-filter.jpg"
+    },
+    {
+      "name": "Brake Rotor",
+      "category": "Brake System",
+      "manufacturer": "BrakeMaster",
+      "description": "Quality brake rotor for reliable braking performance.",
+      "price": 42.99,
+      "stock": 60,
+      "imageURL": "brake-rotor.jpg"
+    },
+    {
+      "name": "Wheel Bearing",
+      "category": "Suspension",
+      "manufacturer": "SmoothRide",
+      "description": "Smooth and durable wheel bearing for consistent handling.",
+      "price": 19.99,
+      "stock": 90,
+      "imageURL": "wheel-bearing.jpg"
+    },
+    {
+      "name": "Transmission Fluid",
+      "category": "Fluids",
+      "manufacturer": "FluidTech",
+      "description": "High-quality transmission fluid for smooth gear shifts.",
+      "price": 8.99,
+      "stock": 200,
+      "imageURL": "transmission-fluid.jpg"
+    },
+    {
+      "name": "Wiper Blades",
+      "category": "Exterior Accessories",
+      "manufacturer": "ClearView",
+      "description": "Durable wiper blades for clear visibility in all weather.",
+      "price": 16.99,
+      "stock": 80,
+      "imageURL": "wiper-blades.jpg"
+    },
+    {
+      "name": "Engine Mount",
+      "category": "Engine Parts",
+      "manufacturer": "StableDrive",
+      "description": "Sturdy engine mount for vibration control and stability.",
+      "price": 22.99,
+      "stock": 70,
+      "imageURL": "engine-mount.jpg"
+    },
+    {
+      "name": "Fuel Pump",
+      "category": "Fuel System",
+      "manufacturer": "FuelPro",
+      "description": "Reliable fuel pump for consistent fuel delivery.",
+      "price": 29.99,
+      "stock": 55,
+      "imageURL": "fuel-pump.jpg"
+    },
+    {
+      "name": "Cabin Air Filter",
+      "category": "Interior Accessories",
+      "manufacturer": "CleanAir",
+      "description": "High-quality cabin air filter for clean and fresh air inside the vehicle.",
+      "price": 12.99,
+      "stock": 100,
+      "imageURL": "cabin-air-filter.jpg"
+    },
+    {
+      "name": "Steering Rack",
+      "category": "Steering",
+      "manufacturer": "ControlTech",
+      "description": "Precise steering rack for accurate and responsive handling.",
+      "price": 39.99,
+      "stock": 45,
+      "imageURL": "steering-rack.jpg"
+    },
+    {
+      "name": "Oxygen Sensor",
+      "category": "Engine Parts",
+      "manufacturer": "EcoSense",
+      "description": "Efficient oxygen sensor for monitoring exhaust gases.",
+      "price": 17.99,
+      "stock": 85,
+      "imageURL": "oxygen-sensor.jpg"
+    },
+    {
+      "name": "Alternator",
+      "category": "Electrical System",
+      "manufacturer": "PowerCharge",
+      "description": "High-output alternator for reliable electrical power generation.",
+      "price": 54.99,
+      "stock": 30,
+      "imageURL": "alternator.jpg"
+    },
+    {
+      "name": "Catalytic Converter",
+      "category": "Exhaust System",
+      "manufacturer": "EcoEmission",
+      "description": "Eco-friendly catalytic converter for emissions control.",
+      "price": 69.99,
+      "stock": 25,
+      "imageURL": "catalytic-converter.jpg"
+    },
+    {
+      "name": "Starter Motor",
+      "category": "Electrical System",
+      "manufacturer": "PowerCharge",
+      "description": "Reliable starter motor for consistent engine starting.",
+      "price": 38.99,
+      "stock": 40,
+      "imageURL": "starter-motor.jpg"
+    },
+    {
+      "name": "Timing Belt",
+      "category": "Engine Parts",
+      "manufacturer": "BeltTech",
+      "description": "Durable timing belt for precise engine timing.",
+      "price": 24.99,
+      "stock": 60,
+      "imageURL": "timing-belt.jpg"
+    },
+    {
+      "name": "Throttle Body",
+      "category": "Fuel System",
+      "manufacturer": "FuelPro",
+      "description": "Responsive throttle body for efficient fuel delivery.",
+      "price": 32.99,
+      "stock": 35,
+      "imageURL": "throttle-body.jpg"
+    }
+  ]
+}
