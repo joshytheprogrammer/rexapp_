@@ -1,0 +1,67 @@
+/* Reset some default styling */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header and navigation bar */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Style the main content */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the hero section */
+.hero {
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+/* Style the categories section */
+.categories {
+  margin-top: 40px;
+}
+
+.categories h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.categories ul {
+  list-style: none;
+}
+
+.categories li {
+  margin-bottom: 10px;
+}
+
+.categories a {
+  text-decoration: none;
+  color: #333;
+}

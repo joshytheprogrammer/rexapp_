@@ -2,19 +2,26 @@
 <html>
 <head>
   <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header>
-    <!-- Navigation bar goes here -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </nav>
   </header>
 
-  <main>
+  <main class="content">
     <!-- Content from individual pages will be inserted here -->
-    <%= content %>
+    <%- body %>
   </main>
 
   <footer>
-    <!-- Footer content goes here -->
+    <p>&copy; <%= new Date().getFullYear() %> RexApp. All rights reserved.</p>
   </footer>
 </body>
 </html>

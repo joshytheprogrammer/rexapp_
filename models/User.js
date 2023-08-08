@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     street: String,
     city: String,
     state: String,
-    zipCode: String
+    landmark: String
   },
   preferences: {
     receivePromotions: { type: Boolean, default: true },
