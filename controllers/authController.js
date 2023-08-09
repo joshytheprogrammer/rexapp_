@@ -2,23 +2,42 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+// Controller for User pages
+exports.getLoginPage = (req, res) => {
+  res.render('login', { pageTitle: 'Login' });
+};
+
+
+exports.getRegisterPage = (req, res) => {
+  res.render('register', { pageTitle: 'Register' });
+};
+
+exports.getDashboardPage = (req, res) => {
+  res.render('dashboard', { pageTitle: 'Dashboard' });
+};
+
+
 // Controller for user registration
 exports.registerUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    
+    console.log(req)
+
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
-    
+
     // Create a new user
-    const user = await User.create({
+    await User.create({
       username,
       email,
       password: hashedPassword
     });
-    
-    res.json({ message: 'User registered successfully', user });
+
+    // Redirect to the login page after successful registration
+    res.redirect('/login'); 
+
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: 'Error registering user' });
   }
 };
@@ -42,9 +61,23 @@ exports.loginUser = async (req, res) => {
     
     // Generate a JWT token
     const token = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET);
+
+    // Set the token as an HttpOnly cookie
+    res.cookie('token', token, { httpOnly: true });
     
-    res.json({ message: 'Login successful', token });
+    res.redirect('/dashboard'); 
   } catch (error) {
     res.status(500).json({ error: 'Error logging in' });
+  }
+};
+
+// Controller for user logout
+exports.logoutUser = (req, res) => {
+  try {
+    // Clear the token cookie by setting an expired date in the past
+    res.cookie('token', '', { expires: new Date(0), httpOnly: true });
+    res.redirect('/'); 
+  } catch (error) {
+    res.status(500).json({ error: 'Error logging out' });
   }
 };

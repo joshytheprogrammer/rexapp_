@@ -19,6 +19,7 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 // Use express-ejs-layouts
