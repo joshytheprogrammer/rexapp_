@@ -4,12 +4,22 @@ const User = require('../models/User');
 
 // Controller for User pages
 exports.getLoginPage = (req, res) => {
-  res.render('login', { pageTitle: 'Login' });
+  if(!req.cookies.token) {
+    res.render('login', { pageTitle: 'Login' });
+    return
+  }
+
+  res.redirect('/dashboard')
 };
 
 
 exports.getRegisterPage = (req, res) => {
-  res.render('register', { pageTitle: 'Register' });
+  if(!req.cookies.token) {
+    res.render('register', { pageTitle: 'Register' });
+    return
+  }
+
+  res.redirect('/dashboard')
 };
 
 exports.getDashboardPage = (req, res) => {

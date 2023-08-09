@@ -6,16 +6,15 @@ const authController = require('../controllers/authController');
 const authMiddleware = require('../middleware/authMiddleware');
 
 // Define routes for user authentication
+router.get('/dashboard', authMiddleware.requireAuth, authController.getDashboardPage);
 router.get('/login', authController.getLoginPage);
 router.get('/register', authController.getRegisterPage);
-router.get('/dashboard', authMiddleware, authController.getDashboardPage);
-
 router.post('/register', authController.registerUser);
 router.post('/login', authController.loginUser);
 router.get('/logout', authController.logoutUser);
 
 // Define other routes here
-router.get('/dashboard', authMiddleware, (req, res) => {
+router.get('/dashboard', authMiddleware.requireAuth, (req, res) => {
   res.send("Hello world");
 });
 
