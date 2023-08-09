@@ -13,7 +13,9 @@ exports.getRegisterPage = (req, res) => {
 };
 
 exports.getDashboardPage = (req, res) => {
-  res.render('dashboard', { pageTitle: 'Dashboard' });
+  const userName = req.user.username; 
+
+  res.render('dashboard', { pageTitle: 'Dashboard', userName });
 };
 
 

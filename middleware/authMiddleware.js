@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
       throw new Error('Authentication required');
     }
 
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findById(decodedToken.userId);
     if (!user) {
       throw new Error('User not found');
