@@ -1,5 +1,11 @@
 const Product = require('../models/Product'); // Import the Product model
 
+/**
+ * Controller for viewing all available products.
+ * Fetches all products from the database and renders the "view products" template.
+ * @param {Request} req - Express request object.
+ * @param {Response} res - Express response object.
+ */
 exports.viewProducts = async (req, res) => {
   const pageTitle = 'Available Products';
   try {
