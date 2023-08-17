@@ -1,6 +1,12 @@
 const Product = require('../models/Product'); // Import the Product model
 const Category = require('../models/Category'); // Import the Category model
 
+/**
+ * Controller for rendering the home page.
+ * Fetches popular products, recently added products, and trending categories.
+ * @param {Request} req - Express request object.
+ * @param {Response} res - Express response object.
+ */
 exports.getHomePage = async (req, res) => {
   try {
     // Fetch popular products
@@ -26,6 +32,3 @@ exports.getHomePage = async (req, res) => {
     res.render('error', { message: 'Error fetching data for home page' });
   }
 };
-
-
-
