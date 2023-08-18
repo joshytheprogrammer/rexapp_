@@ -8,11 +8,10 @@ const User = require('../models/User');
  * @param {Response} res - Express response object.
  */
 exports.getLoginPage = (req, res) => {
-  if(!req.cookies.token) {
-    res.render('login', { pageTitle: 'Login', error: null });
+  if (!req.cookies.token) {
+    res.render('login', { pageTitle: 'Login', error: null, user: req.user });
     return;
   }
-
   res.redirect('/dashboard');
 };
 
@@ -22,11 +21,10 @@ exports.getLoginPage = (req, res) => {
  * @param {Response} res - Express response object.
  */
 exports.getRegisterPage = (req, res) => {
-  if(!req.cookies.token) {
-    res.render('register', { pageTitle: 'Register', error: null });
+  if (!req.cookies.token) {
+    res.render('register', { pageTitle: 'Register', error: null, user: req.user });
     return;
   }
-
   res.redirect('/dashboard');
 };
 

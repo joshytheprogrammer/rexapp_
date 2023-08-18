@@ -12,11 +12,11 @@ exports.viewProducts = async (req, res) => {
     // Fetch all products from the database
     const products = await Product.find();
 
-    // Render the "view products" template with the fetched products
-    res.render('products', { pageTitle, products, content: '' });
+    // Pass the user object along with other data when rendering the view
+    res.render('products', { pageTitle, products, content: '', user: req.user });
   } catch (error) {
     console.error('Error fetching products:', error);
     // Handle errors and render an error page
-    res.render('error', { message: 'Error fetching products' });
+    res.render('error', { message: 'Error fetching products', user: req.user });
   }
 };

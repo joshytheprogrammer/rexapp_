@@ -4,6 +4,11 @@ const productController = require('../controllers/productsController');
 const homeController = require('../controllers/homeController');
 const authController = require('../controllers/authController');
 const authMiddleware = require('../middleware/authMiddleware');
+const adminController = require('../controllers/admin/adminController');
+
+// Define routes for admin functionality
+router.get('/admin/login', adminController.getAdminLoginPage);
+router.post('/admin/login', adminController.adminLogin);
 
 // Define routes for user authentication
 router.get('/dashboard', authMiddleware.requireAuth, authController.getDashboardPage);

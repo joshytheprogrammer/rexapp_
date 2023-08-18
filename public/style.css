@@ -35,7 +35,7 @@ nav a {
 
 /* Style the hero section */
 .hero {
-  background-image: url('/images/hero-bg.jpg');
+  background-image: url('https://risingtheme.com/html/demo-partsix/partsix/assets/img/slider/home1-slider1-layer.webp');
   background-size: cover;
   background-position: center;
   color: white;
@@ -66,8 +66,7 @@ nav a {
   color: #333;
 }
 
-
-
+/* Style the form container */
 .container {
   width: 400px;
   margin: 0 auto;
@@ -77,6 +76,7 @@ nav a {
   border-radius: 5px;
 }
 
+/* Style form elements */
 form {
   display: flex;
   flex-direction: column;
@@ -111,6 +111,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Style error messages */
 .error-message {
   background-color: #ffcccc;
   color: #cc0000;

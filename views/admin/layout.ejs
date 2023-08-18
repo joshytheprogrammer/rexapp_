@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Admin navigation links -->
+      <ul>
+        <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+        <!-- Add more admin navigation links as needed -->
+      </ul>
+    </nav>
+  </header>
+
+  <aside>
+    <!-- Sidebar content -->
+    <!-- Add admin-specific sidebar content here -->
+  </aside>
+
+  <main class="content">
+    <!-- Content from individual pages will be inserted here -->
+    <%- body %>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Admin Panel. All rights reserved.</p>
+  </footer>
+</body>
+</html>

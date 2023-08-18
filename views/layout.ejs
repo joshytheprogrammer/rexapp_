@@ -11,12 +11,20 @@
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/products">Products</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
+        
+        <% if (user) { %>
+          <!-- Display Logout link when user is logged in -->
+          <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <!-- Display Login link when user is not logged in -->
+          <li><a href="/login">Login</a></li>
+        <% } %>
+        
         <!-- Add more navigation links as needed -->
       </ul>
     </nav>
   </header>
+  
 
   <main class="content">
     <!-- Content from individual pages will be inserted here -->

@@ -26,18 +26,16 @@ app.use(bodyParser.json());
 app.use(expressLayouts);
 app.use(express.static('public'));
 
-
 app.set('layout', './layout.ejs')
+
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
 // Set the views (templates) directory
 app.set('views', __dirname + '/views');
 
-
 // Use routes
 app.use('/', routes);
-
 
 if (process.env.NODE_ENV == 'development') {
   mongoose.connect(process.env.DEV_MONGO_URL)
@@ -48,7 +46,6 @@ if (process.env.NODE_ENV == 'development') {
       console.log(err)
     });
 }
-
 
 if (process.env.NODE_ENV == 'production') {
   mongoose.connect(process.env.PROD_MONGO_URL)

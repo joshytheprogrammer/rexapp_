@@ -1,0 +1,35 @@
+<!-- views/admin/login.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="../admin.css">
+</head>
+<body>
+  <header>
+    <!-- Include your admin header/navigation here -->
+  </header>
+
+  <main class="content">
+    <div class="container">
+      <h1>Admin Login</h1>
+      <form action="/admin/login" method="POST">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Include your admin footer here -->
+  </footer>
+</body>
+</html>

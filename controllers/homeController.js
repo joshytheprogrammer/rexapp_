@@ -18,12 +18,16 @@ exports.getHomePage = async (req, res) => {
     // Fetch trending categories
     const trendingCategories = await Category.find().limit(5);
 
-    // Render the home page template with fetched data
+    // Get the user object from the request (if present)
+    const user = req.user;
+
+    // Render the home page template with fetched data and user object
     res.render('index', {
       pageTitle: 'Home',
       popularProducts,
       recentlyAddedProducts,
       trendingCategories,
+      user, // Pass the user object to the template
       content: ''
     });
   } catch (error) {

@@ -5,6 +5,8 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true },
   manufacturer: { type: String, required: true },
   description: { type: String, required: true },
+  partNumber: { type: String, required: true, unique: true }, // Make partNumber unique
+  specification: { type: String, required: true },
   price: { type: Number, required: true },
   stock: { type: Number, required: true }, // How many items are left.
   imageURL: { type: String }
