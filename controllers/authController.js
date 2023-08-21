@@ -36,7 +36,7 @@ exports.getRegisterPage = (req, res) => {
 exports.getDashboardPage = (req, res) => {
   const userName = req.user.username; 
 
-  res.render('dashboard', { pageTitle: 'Dashboard', userName });
+  res.render('dashboard', { pageTitle: 'Dashboard', userName, user: req.user });
 };
 
 /**
@@ -51,13 +51,13 @@ exports.loginUser = async (req, res) => {
     // Find the user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(404).render('login', { pageTitle: 'Login', error: 'Invalid email or password' });
+      return res.status(404).render('login', { pageTitle: 'Login', error: 'Invalid email or password', user: null });
     }
     
     // Compare passwords
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).render('login', { pageTitle: 'Login', error: 'Invalid email or password' });
+      return res.status(401).render('login', { pageTitle: 'Login', error: 'Invalid email or password', user: null  });
     }
     
     // Generate a JWT token
@@ -95,7 +95,7 @@ exports.registerUser = async (req, res) => {
     res.redirect('/login'); 
 
   } catch (error) {
-    res.status(500).render('register', { pageTitle: 'Register', error: 'An error occurred during registration. Please try again.' });
+    res.status(500).render('register', { pageTitle: 'Register', error: 'An error occurred during registration. Please try again.', user: null  });
   }
 };
 
@@ -110,6 +110,6 @@ exports.logoutUser = (req, res) => {
     res.cookie('token', '', { expires: new Date(0), httpOnly: true });
     res.redirect('/'); 
   } catch (error) {
-    res.status(500).render('dashboard', { pageTitle: 'Dashboard', userName: req.user.username, error: 'An error occurred during logout. Please try again.' });
+    res.status(500).render('dashboard', { pageTitle: 'Dashboard', userName: req.user.username, error: 'An error occurred during logout. Please try again.', user: null  });
   }
 };

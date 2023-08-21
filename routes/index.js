@@ -3,8 +3,12 @@ const router = express.Router();
 const productController = require('../controllers/productsController');
 const homeController = require('../controllers/homeController');
 const authController = require('../controllers/authController');
+const authCheckMiddleware = require('../middleware/authCheckMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 const adminController = require('../controllers/admin/adminController');
+
+router.use(authCheckMiddleware);
+
 
 // Define routes for admin functionality
 router.get('/admin/login', adminController.getAdminLoginPage);
@@ -17,11 +21,6 @@ router.get('/register', authController.getRegisterPage);
 router.post('/register', authController.registerUser);
 router.post('/login', authController.loginUser);
 router.get('/logout', authController.logoutUser);
-
-// Define other routes here
-router.get('/dashboard', authMiddleware.requireAuth, (req, res) => {
-  res.send("Hello world");
-});
 
 router.get('/', homeController.getHomePage);
 router.get('/products', productController.viewProducts);

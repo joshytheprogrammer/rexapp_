@@ -1,10 +1,43 @@
-
 <h1>Available Products</h1>
 <ul>
   <% products.forEach(product => { %>
     <li>
       <h2><%= product.name %></h2>
+      <p><%= product._id %></p>
       <!-- Display other product details as needed -->
+
+      <% if (user) { %>
+        <form action="/add-to-cart" method="POST">
+          <input type="hidden" name="productId" value="<%= product._id %>">
+          <button type="submit">Add to Cart</button>
+        </form>
+      <% } else { %>
+        <button class="add-to-cart-guest" data-product-id="<%= product._id %>">Add to Cart (Guest)</button>
+      <% } %>
     </li>
   <% }); %>
 </ul>
+
+<script>
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-guest');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      addToGuestCart(productId);
+    });
+  });
+
+  function addToGuestCart(productId) {
+    const existingCart = JSON.parse(localStorage.getItem('guestCart')) || [];
+    const cartItemIndex = existingCart.findIndex(item => item.partId === productId);
+
+    if (cartItemIndex !== -1) {
+      existingCart[cartItemIndex].quantity += 1;
+    } else {
+      existingCart.push({ partId: productId, quantity: 1 });
+    }
+
+    localStorage.setItem('guestCart', JSON.stringify(existingCart));
+    console.log(`Added product with ID ${productId} to cart (Guest)`);
+  }
+</script>
